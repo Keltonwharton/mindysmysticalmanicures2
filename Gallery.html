@@ -1,0 +1,104 @@
+<!doctype html>
+<html><head>
+<script language="JavaScript1.1">
+<!--
+
+/*
+JavaScript Image slideshow:
+By JavaScript Kit (www.javascriptkit.com)
+Over 200+ free JavaScript here!
+*/
+
+var slideimages=new Array()
+var slidelinks=new Array()
+function slideshowimages(){
+for (i=0;i<slideshowimages.arguments.length;i++){
+slideimages[i]=new Image()
+slideimages[i].src=slideshowimages.arguments[i]
+}
+}
+
+function slideshowlinks(){
+for (i=0;i<slideshowlinks.arguments.length;i++)
+slidelinks[i]=slideshowlinks.arguments[i]
+}
+
+function gotoshow(){
+if (!window.winslide||winslide.closed)
+winslide=window.open(slidelinks[whichlink])
+else
+winslide.location=slidelinks[whichlink]
+winslide.focus()
+}
+
+//-->
+</script>
+<script>// scripts.js
+
+   document.addEventListener('DOMContentLoaded', function() {
+    const contactLink = document.getElementById('contact-link');
+    contactLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        alert('Name: Mindy Wharton\nCall or Text: 435-267-2260');
+    });
+});
+
+    </script>
+
+<meta charset="utf-8">
+<title>Mindy's Mystical Manicures - Gallery Page</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="contact-link" id="contact-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="know">
+        
+        
+        <section class="container1">
+            <h2>Nail Art Ideas and colors</h2>
+            <p class="photo"><a href="javascript:gotoshow()"><img src="/Images/mindy's_logo.png" name="slide" border=0 width=500 height=475></a>
+        </section>
+<script>
+<!--
+
+//configure the paths of the images, plus corresponding target links
+slideshowimages("Images/mindy's_logo.png","Images/pic1.jpg","Images/nailart4.webp","Images/pic2.jpg","Images/pic3.jpg","Images/nailart.webp","Images/nailart2.webp","Images/nailart3.webp","Images/nailart5.webp","Images/nailart7.webp","Images/nailart8.jpeg","Images/nailart9.jpeg","Images/nailart10.jpeg","Images/nailart11.jpeg","Images/nailcolors.jpeg")
+//configure the speed of the slideshow, in miliseconds
+var slideshowspeed=3000
+
+var whichlink=0
+var whichimage=0
+function slideit(){
+if (!document.images)
+return
+document.images.slide.src=slideimages[whichimage].src
+whichlink=whichimage
+if (whichimage<slideimages.length-1)
+whichimage++
+else
+whichimage=0
+setTimeout("slideit()",slideshowspeed)
+}
+slideit()
+
+//-->
+</script>
+<!--<p align="center"><font face="arial" size="-2">This free script provided by</font><br>
+<font face="arial, helvetica" size="-2"><a href="http://javascriptkit.com">JavaScript
+Kit</a></font></p></p>-->
+        </section>
+        
+    
+    </div>
+</body>
+</html>
